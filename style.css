@@ -1,0 +1,150 @@
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+
+}
+
+   .time-select,
+   .sound-picker,
+   .player-container {
+ height: 80%;
+ flex:1;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-evenly;
+ align-items: center;
+}
+
+
+.time-select button{
+width: 5rem;
+  height: 5rem;
+    text-align: center;
+    border-radius: 50%;
+    padding: 16px;
+    box-shadow: 0 10px 15px rgb(0 0 0 / 30%);
+    transition: all .5s ease;
+    color: rgb(11, 18, 53);
+    box-sizing: border-box;
+    border-style:none;
+    font-size: 20px;
+cursor:pointer;
+}
+.time-select button:hover {
+  box-shadow: 0 5px 7px rgba(0,0,0,.4);
+  background: linear-gradient(
+0deg,
+cadetblue, rgb(245, 244, 241));
+}
+
+ button, button:active, button:focus {
+   outline:none;
+ }
+
+.sound-picker button {
+color:white;
+width: 120px;
+height: 120px;
+background: none;
+border: 2px solid white;
+cursor: pointer;
+border-radius: 50%;
+font-size: 20px;
+transition: all 0.5s ease;
+padding: 1rem;
+}
+
+.sound-picker button:nth-child(1) {
+  background: cadetblue;
+}
+.sound-picker button:nth-child(2) {
+  background: rgb(245, 222, 91);
+}
+.sound-picker button img {
+ height: 100%;
+}
+
+.player-container  svg{
+  position: absolute;
+  height: 50%;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  pointer-events: none;
+}
+.player-container svg circle {
+  transition: all 0.2s ease-in-out;
+}
+
+.time-display {
+  position: absolute;
+  bottom: 0;
+  color: aliceblue;
+  font-size: 50px;
+}
+
+.video {
+  position: fixed;
+  right:0;
+  bottom:0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -10;
+}
+
+@media screen and (max-width: 700px) {
+  .time-select,
+  .sound-picker {
+    flex-direction: row;
+    justify-content: end;
+    align-items: flex-start;
+height: 60%;
+margin-top: -200px;
+
+  }
+  .time-select button,
+  .sound-picker button {
+margin: 10px;
+
+  }
+  }
+
+@media screen and (max-width: 660px) {
+
+.player-container {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.time-select{
+ position: absolute;
+ height: 20%;
+margin-top: -400px;
+
+}
+.sound-picker {
+  position: absolute;
+  bottom: -195px;
+  color: aliceblue;
+  font-size: 50px;
+  z-index: 40;
+}
+.time-display {
+  position: absolute;
+  bottom: 160px;
+  color: aliceblue;
+  font-size: 50px;
+}
+  }
